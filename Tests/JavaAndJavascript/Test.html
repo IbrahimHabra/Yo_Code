@@ -1,0 +1,24 @@
+<HTML><HEAD></HEAD><BODY>
+<SCRIPT>
+function getScreenDimension() {
+
+alert("Screen Dimension\n" +
+  "  width:" +
+  java.awt.Toolkit.getDefaultToolkit().getScreenSize().width +
+  " height:" +
+  java.awt.Toolkit.getDefaultToolkit().getScreenSize().height);
+  }
+</SCRIPT>
+<FORM>
+    <INPUT type="button" value="call Java Applet method"
+           onClick = "document.myApplet.sayHello()">
+</FORM>
+
+<INPUT type="button" value="call Java method direct"
+       onClick = "getScreenDimension()">
+
+<APPLET CODE="InJava.class"
+        NAME="myApplet"
+        HEIGHT=100 WIDTH=100>
+</APPLET>
+</BODY></HTML>

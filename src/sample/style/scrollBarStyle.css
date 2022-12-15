@@ -1,0 +1,54 @@
+@font-face{
+    font-family:comfortaa;
+    src:url("Comfortaa-Light.ttf");
+}
+
+*{
+    -fx-font-family: comfortaa;
+}
+
+
+.scroll-bar:vertical .track{
+    -fx-background-color: #c3073f;
+    -fx-background-radius: 0em;
+    -fx-border-radius:0em;
+}
+
+
+
+.scroll-bar:vertical .thumb{
+    -fx-background-color:#4e4e50;
+    -fx-pref-width: 100;
+    -fx-padding: 3;
+}
+
+
+.web-view.scroll-bar:vertical .track{     -fx-background-color: #1a1a1d;
+                                     	 -fx-background-radius: 0em;
+                                          -fx-border-radius:0em;
+                                          }
+
+
+.scroll-bar:vertical *.increment-button,
+.scroll-bar:vertical *.decrement-button{ fx-background-color:transparent;
+                                         	-fx-background-radius: 0em;
+                                         	-fx-padding:0 0.7em 0 0;}
+
+.scroll-bar:vertical *.increment-arrow .content,
+.scroll-bar:vertical *.decrement-arrow .content{ -fx-shape: " ";
+                                                 	-fx-padding:0;}
+
+.scroll-bar:vertical *.increment-arrow,
+.scroll-bar:vertical *.decrement-arrow{ -fx-shape: " ";
+                                        	-fx-padding:0;}
+
+
+
+
+.scroll-pane .corner{-fx-opacity:0;}
+
+.scroll-pane{-fx-opacity:0;}
+
+.combo-box-base .text{
+-fx-fill: rgb(20.0, 255.0, 255.0);
+}

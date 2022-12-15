@@ -1,0 +1,222 @@
+<html>
+<style>
+        body{
+            background: #1a1a1d;
+        }
+        @font-face{
+            font-family:comfortaa;
+            src:url(comfortaa/Comfortaa-Light.ttf);
+        }
+        *{
+            box-sizing: border-box;
+            white-space: normal;
+            word-break: break-all;
+            font-family: comfortaa;
+        }
+        #lala{
+            position:relative;
+            width:100%;
+            height:100%;
+            line-height:23vw;
+            margin-top:-20%;
+        }
+        .alerta{
+            position:fixed;
+            z-index:999;
+    						 width:85vw;
+            height:0;
+            transition:all 0.5s ease-in-out;
+            display:flex;
+            bottom:5vh;
+            opacity:0;
+            visibility:hidden;
+            background-color:#5a0960;
+            justify-content:center;
+            align-items:center;
+            color:white;
+            font-size:0;
+            border-radius:3vw;
+            left:7.5vw;
+            right:7.5vw
+        }
+
+        body::-WebKit-scrollbar{background-color: #1a1a1d;
+        }
+
+        body::-WebKit-scrollbar-thumb{background-color: #222229}
+
+
+
+    </style>
+<input type="hidden" value="*::-WebKit-scrollbar{width:0;background: transparent;display:none;}">
+<input id='popo' style='position: absolute; left:-10000%'>
+<div id='lala'></div>
+<div class='alerta' id='text'><div>text copied!</div></div>
+<div class='alerta' id='key'><div>cipher key copied!</div></div>
+<div class='alerta' id='nokey'><div>this cipher has no key!</div></div>
+<script type="text/javascript" src="XMLRequest.js"></script>
+<script>
+    //keys, texts, ciphers, projects
+
+		var kka = keys.split("_");
+		var tta = texts.split("_");
+		var cca = ciphers.split("_");
+		var ppa = projects.split("_");
+
+        var keyss = [];
+
+        for(let i = 0;i<kka.length;i++){
+            if(kka[i].length > 16&&kka[i]!="this cipher has no key"){
+                keyss[i] = kka[i].substr(0, 15) + "...";
+            }else{
+                keyss[i] = kka[i];
+            }
+        }
+
+
+        var lalaLongs = kka.length;
+
+
+
+        var peepee = 0;
+
+        function lala(p, text, cipher, key, keyy){
+            var brrr = document.createElement('BR');
+            peepee++;
+            var lala = document.getElementById('lala');
+            var diva = document.createElement('DIV');
+            var divd = document.createElement('DIV');
+            var divtooltip = document.createElement('DIV');
+            divtooltip.class = 'lololo';
+            var divruprup = document.createElement('DIV');
+            divruprup.class = 'ruprup';
+            var divtooltiptext = document.createElement('DIV');
+            divtooltiptext.innerHTML = cipher + ', <br>' + key;
+            divtooltip.innerHTML = '!';
+            divruprup.innerHTML = text;
+            divd.innerHTML = p;
+            diva.appendChild(divd);
+            diva.appendChild(divruprup);
+            diva.appendChild(divtooltip);
+            diva.style.cssText = "width:30%;height:18vw;position:absolute;display: block;background: #c3073f;font-size: calc(100vw / 49);color:white;font-weight:bolder;text-align: center;border-radius: calc(100vw / 30);padding: 5%;padding-top: 6%;";
+
+
+
+            divd.style.cssText = "width:60%;display: block;position:absolute;top:-7%;height:30%;background: #5009a0;/*950740*/border-radius: calc(100vw / 50);z-index: 2;left:-3.125%;text-align:center;vertical-align:middle;line-height:250%;";
+            divruprup.style.cssText = "width:100%;height:100%;overflow-y:auto;-ms-overflow-style:none;scrollbar-width:none;z-index:3;line-height:110%;";
+
+           divruprup.onclick = function(){
+                var gg = document.getElementById('popo');
+                gg.value = text;
+                var copyText = gg;
+                copyText.select();
+                copyText.setSelectionRange(0, 99999);//for mobile devices
+                document.execCommand("COPY");
+                alerttext();
+           }
+
+
+           lala.appendChild(divtooltiptext);
+
+
+
+
+            divtooltip.style.cssText = "position: absolute;color:white;width:3vw;height:3vw;background: #6f2232;border-radius: 100%;line-height: 3vw;right:5%;bottom:6%;font-size:calc(100vw / 60);";
+
+            divtooltiptext.style.cssText = "background-color: #4e4e50;color: #fff;text-align: center;position: fixed;z-index: 999;transition:all 0.3s ease-out; width:30%;height:8vw; font-size:2vw;border-bottom-left-radius:2vw;border-bottom-right-radius:2vw;line-height:3.5vw;";
+
+             divtooltiptext.style.left = 'calc(3.25% + 30% + 1.6666%)';
+
+             divtooltiptext.style.top = '-8vw';
+
+            if(peepee==1){
+                lala.appendChild(brrr);
+                diva.style.left = "3.3333%";
+            }else if(peepee==2){
+                diva.style.left = "calc(3.3333% + 30% + 1.6666%)";
+            }else if(peepee==3){
+                diva.style.left = "calc(3.3333% + 30% + 1.6666% + 30% + 1.6666%)";
+                peepee = 0;
+            }
+
+            divtooltip.onmouseover = function(){
+
+                divtooltiptext.style.top = '0vw';
+
+            }
+            divtooltip.onmouseout = function(){
+
+                divtooltiptext.style.top = '-8vw';
+
+            }
+
+            divtooltip.onclick = function() {
+                var gg = document.getElementById('popo');
+                gg.value = keyy;
+                var copyText = gg;
+                copyText.select();
+                copyText.setSelectionRange(0, 99999);//for mobile devices
+                if(keyy!='this cipher has no key'){
+                    document.execCommand("COPY");
+                    alertkey();
+                }else{
+                    alertnokey();
+                }
+
+            }
+
+
+           lala.appendChild(diva);
+
+
+
+        }
+        for(var i = 0;i<lalaLongs;i++){
+            lala(ppa[i], tta[i], cca[i], keyss[i], kka[i]);
+        }
+
+
+        function alerttext(){
+            var textaa = document.getElementById("text");
+            textaa.style.height = "20vh";
+            textaa.style.visibility = 'visible';
+            textaa.style.opacity = 1;
+            textaa.style.fontSize = 'calc(2vw + 2vh)';
+
+            setTimeout(function(){
+                textaa.style.height = 0;
+                textaa.style.fontSize = 0;
+                textaa.style.visibility = 'hidden';
+                textaa.style.opacity = 0;
+            }, 2000);
+        }
+        function alertkey(){
+            var keyaa = document.getElementById("key");
+            keyaa.style.height = "20vh";
+            keyaa.style.visibility = 'visible';
+            keyaa.style.opacity = 1;
+            keyaa.style.fontSize = 'calc(2vw + 2vh)';
+
+            setTimeout(function(){
+                keyaa.style.height = 0;
+                keyaa.style.visibility = 'hidden';
+                keyaa.style.opacity = 0;
+                keyaa.style.fontSize = 0;
+            }, 2000);
+        }
+        function alertnokey(){
+            var keyaa = document.getElementById("nokey");
+            keyaa.style.height = "20vh";
+            keyaa.style.visibility = 'visible';
+            keyaa.style.opacity = 1;
+            keyaa.style.fontSize = 'calc(2vw + 2vh)';
+
+            setTimeout(function(){
+                keyaa.style.height = 0;
+                keyaa.style.visibility = 'hidden';
+                keyaa.style.opacity = 0;
+                keyaa.style.fontSize = 0;
+            }, 2000);
+        }
+
+    </script>

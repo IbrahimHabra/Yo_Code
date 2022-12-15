@@ -1,0 +1,149 @@
+<html>
+<style>
+        body{
+            background: #1a1a1d;
+            padding-top: 1%;
+        }
+        *{
+            box-sizing:border-box;
+            white-space:normal;
+            word-break:break-all;
+        }
+        .a, .b, .c{
+            display:inline-block;
+            width:30%;
+            position:absolute;
+            height:18vw;
+            background: #c3073f;
+            font-size: calc(100vw / 48);
+            color:white;
+            font-weight:bolder;
+            text-align: center;
+            border-radius: 3vw;
+            padding: 5%;
+        }
+        .d, .e, .f{
+            display:block;
+            position:absolute;
+            width:50%;
+            top:-7%;
+            height:30%;
+            background: #6f2232;/*500960*/
+            border-radius: 2vw;
+            z-index: 2;
+            left:-3.125%;
+            text-align:center;
+            line-height:280%;
+            font-size: calc(100vw / 53);
+        }
+        #lala{
+            position:relative;
+            width:100%;
+            height:100%;
+            line-height:23vw;
+        }
+        .a{
+            left:3.3%;
+        }
+        .b{
+            left:calc(3.3% + 30% + 1.6%);
+        }
+        .c{
+            left:calc(3.3% + 30% + 1.6% + 30% + 1.6%);
+        }
+        pre{
+            max-width: 100%;
+            overflow: hidden;
+        }
+        .ruprup::-WebKit-scrollbar{
+              display:none;
+        }
+        .ruprup{
+            width:100%;
+            height:100%;
+            overflow:scroll;
+            -ms-overflow-style:none;
+            z-index:3;
+            line-height:110%;
+        }
+        .tooltip {
+            position: absolute;
+            color:white;
+            width:3vw;
+            height:3vw;
+            background: #500960;/*950740*/
+            border-radius: 100%;
+            line-height: 200%;
+            left:6%;
+            bottom:6%;
+            font-size:calc(100vw / 60);
+        }
+
+        .tooltiptext {
+            visibility: hidden;
+            background-color: #4e4e50;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            position: absolute;
+            z-index: 3;
+            bottom: 125%;
+            margin-left: -60px;
+            opacity: 0;
+            transition: opacity 0.3s;
+            font-size: calc(100vw / 55);
+            max-height: 200%;
+            white-space: nowrap;
+            word-break: normal;
+            padding: 9%;
+            line-height: 170%;
+        }
+
+        .tooltip:hover .tooltiptext {
+          visibility: visible;
+          opacity: 1;
+        }
+    </style>
+<div id='lala'>
+    <div class='a'>
+        <div class='d'>proj name</div>
+        <div class='ruprup' onclick='myFunction(this)'>lala</div>
+        <div class="tooltip">!<span class="tooltiptext">cipher type, <br>the key</span></div>
+    </div>
+    <div class='b'>
+        <div class='e'>proj name</div>
+        <div class='ruprup' onclick='myFunction(this)'>lala</div>
+        <div class="tooltip">!<span class="tooltiptext">cipher key, <br>the key</span></div>
+    </div>
+    <div class='c'>
+        <div class='f'>proj name</div>
+        <div class='ruprup' onclick='myFunction(this)'>lagfhfghfghjdoebdieniswo9w82838ehxhsow9838ehdjxowjwie9ejwn isisnxi9wjwla</div>
+        <div class="tooltip">!<span class="tooltiptext">cipher type, <br>the key</span></div>
+    </div>
+
+    <br>
+
+    <div class='a'>
+        <div class='d'>proj name</div>
+        <div class='ruprup' onclick='myFunction(this)'>my name is lala and my girlfriend's name is lala and she is ugly as heck but she has a five meters long neck</div>
+        <div class="tooltip">!<span class="tooltiptext">cipher type, <br>the key</span></div>
+    </div>
+    <div class='b'>
+        <div class='e'>proj name</div>
+        <div class='ruprup' onclick='myFunction(this)'>lala</div>
+        <div class="tooltip">!<span class="tooltiptext">cipher key, <br>the key</span></div>
+    </div>
+</div>
+<input id='popo' style='position: absolute; left:-10000%'>
+
+<script>
+        function myFunction(ll) {
+            var gg = document.getElementById('popo');
+            gg.value = ll.innerHTML;
+            var copyText = gg;
+            copyText.select();
+            copyText.setSelectionRange(0, 99999);
+            document.execCommand("copy");
+            alert('text copied');
+        }
+    </script>
